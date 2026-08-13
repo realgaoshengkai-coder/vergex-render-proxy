@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: vergex-cli-proxy
+    runtime: docker
+    plan: free
+    autoDeployTrigger: off
+    healthCheckPath: /v1/models
+    envVars:
+      - key: CLIPROXY_CONFIG_B64
+        sync: false
+      - key: CLIPROXY_AUTH_B64
+        sync: false
